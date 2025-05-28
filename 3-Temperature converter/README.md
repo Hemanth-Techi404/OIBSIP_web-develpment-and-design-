@@ -1,4 +1,3 @@
-#Temperature Converter App
 Temperature Converter App
 A clean and intuitive web application for converting temperatures between Celsius (°C), Fahrenheit (°F), and Kelvin (K). Built using HTML, CSS, and JavaScript, this app delivers fast, accurate conversions with a responsive and user-friendly interface, perfect for quick temperature calculations.
 Table of Contents
