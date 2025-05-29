@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute to Rohit Sharma - The Hitman</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: calc(100% - 24px);
+            width: 2px;
+            background: #3b82f6;
+        }
+        .stats-card {
+            transition: all 0.3s ease;
+        }
+        .stats-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <img src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316800/316890.png" alt="Rohit Sharma" class="h-10 w-10 rounded-full object-cover">
+                    <span class="font-bold text-blue-800 text-xl">Hitman</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-blue-800 hover:text-blue-600 font-medium">About</a>
+                    <a href="#achievements" class="text-blue-800 hover:text-blue-600 font-medium">Achievements</a>
+                    <a href="#stats" class="text-blue-800 hover:text-blue-600 font-medium">Stats</a>
+                    <a href="#gallery" class="text-blue-800 hover:text-blue-600 font-medium">Gallery</a>
+                </div>
+                <button class="md:hidden text-blue-800">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Rohit Sharma</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6">The Hitman of Indian Cricket</h2>
+                <p class="text-lg mb-8">One of the most destructive batsmen in modern cricket, known for his elegant stroke play and record-breaking innings.</p>
+                <div class="flex space-x-4">
+                    <a href="#about" class="bg-white text-blue-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Explore More</a>
+                    <a href="#stats" class="border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-800 transition">See Stats</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Shri_Rohit_Gurunath_Sharma_%28Cropped%29.jpg" alt="Rohit Sharma" class="rounded-full border-4 border-white shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-800">About The Hitman</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv-SD219QnSiSyl9PK9eg-sZZyBB1BsrlKzg&s" alt="Rohit Sharma batting" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-gray-700 mb-4 text-lg">
+                        Rohit Gurunath Sharma, born on April 30, 1987, in Nagpur, Maharashtra, is one of the most prolific batsmen in international cricket. His journey from a promising young talent to the captain of the Indian cricket team is nothing short of inspirational.
+                    </p>
+                    <p class="text-gray-700 mb-4 text-lg">
+                        What makes Rohit special is his ability to play long innings with effortless grace. His lazy elegance at the crease combined with explosive power makes him a nightmare for bowlers. The way he times the ball is often described as poetry in motion.
+                    </p>
+                    <p class="text-gray-700 mb-4 text-lg">
+                        Beyond his cricketing skills, Rohit is admired for his calm demeanor, leadership qualities, and ability to perform under pressure. His transformation from a middle-order batsman to one of the greatest openers in ODI history is a testament to his adaptability and work ethic.
+                    </p>
+                    <div class="mt-6">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-800">Personal Traits I Admire:</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Humility</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Work Ethic</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Leadership</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Adaptability</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Team Player</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 id="achievements" class="text-3xl font-bold text-center mb-12 text-blue-800">Career Milestones</h2>
+            <div class="relative">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item relative pl-8 pb-8">
+                    <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-600 border-4 border-blue-300"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">International Debut (2007)</h3>
+                        <p class="text-gray-700">Made his international debut against Ireland in Belfast. Showed glimpses of his talent early in his career with a composed 50 in just his second ODI.</p>
+                        <img src="https://onecricketnews.akamaized.net/parth-editor/oc-dashboard/news-images-prod/1695209472701_ro.webp" alt="Young Rohit Sharma" class="mt-4 rounded-lg w-full">
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item relative pl-8 pb-8">
+                    <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-600 border-4 border-blue-300"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">T20 World Cup Winner (2007)</h3>
+                        <p class="text-gray-700">Played a crucial role in India's inaugural T20 World Cup triumph in South Africa, including a memorable 30* in the final against Pakistan.</p>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGyugNUIDS_tjj7jZiYeK2vh3ota7FvdsSEA&s" alt="2007 T20 World Cup" class="mt-4 rounded-lg w-full">
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item relative pl-8 pb-8">
+                    <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-600 border-4 border-blue-300"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">Transformation to Opener (2013)</h3>
+                        <p class="text-gray-700">Promoted to open the innings in ODIs during the Champions Trophy. This decision changed his career as he went on to become one of the greatest ODI openers.</p>
+                        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201912/AP19356498890199_0.jpeg?size=690:388" alt="Rohit as opener" class="mt-4 rounded-lg w-full">
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item relative pl-8 pb-8">
+                    <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-600 border-4 border-blue-300"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">First ODI Double Century (2013)</h3>
+                        <p class="text-gray-700">Scored 209 against Australia in Bangalore, becoming only the third Indian to score an ODI double century. This was just the beginning of his record-breaking spree.</p>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuDgw57PshX9IMhoFvr3Aad29wnn5JrA59Gg&s" alt="209 vs Australia" class="mt-4 rounded-lg w-full">
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 5 -->
+                <div class="timeline-item relative pl-8 pb-8">
+                    <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-600 border-4 border-blue-300"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">World Record 264 (2014)</h3>
+                        <p class="text-gray-700">Smashed 264 against Sri Lanka at Eden Gardens - the highest individual score in ODI history. This innings showcased his incredible ability to accelerate.</p>
+                        <img src="https://dt.andaman.gov.in/newsimages/171213032.gif" alt="264 vs Sri Lanka" class="mt-4 rounded-lg w-full">
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 6 -->
+                <div class="timeline-item relative pl-8">
+                    <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-600 border-4 border-blue-300"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">Captaincy & 5 IPL Titles (2017-2023)</h3>
+                        <p class="text-gray-700">Took over Mumbai Indians captaincy and led them to record 5 IPL titles. Also became India's full-time white-ball captain, leading the team to numerous victories.</p>
+                        <img src="https://pbs.twimg.com/media/Fu23rnEaUAEsOzF.jpg:large" alt="IPL Captain" class="mt-4 rounded-lg w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-800">By The Numbers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Stat Card 1 -->
+                <div class="stats-card bg-blue-50 p-6 rounded-lg shadow-md text-center hover:shadow-lg">
+                    <div class="text-blue-800 mb-4">
+                        <i class="fas fa-trophy text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">3</h3>
+                    <p class="text-gray-700">Double Centuries in ODIs (World Record)</p>
+                    <img src="https://images.news18.com/ibnlive/uploads/2023/05/rohit-sharma-mumbai-indians-ipl-2023.jpg" alt="Double centuries" class="mt-4 rounded-lg w-full">
+                </div>
+                
+                <!-- Stat Card 2 -->
+                <div class="stats-card bg-blue-50 p-6 rounded-lg shadow-md text-center hover:shadow-lg">
+                    <div class="text-blue-800 mb-4">
+                        <i class="fas fa-star text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">264</h3>
+                    <p class="text-gray-700">Highest Individual ODI Score (World Record)</p>
+                    <img src="https://imgc.ap7am.com/bimg/cr-2025040267ed17adad083.jpg" alt="264 record" class="mt-4 rounded-lg w-full">
+                </div>
+                
+                <!-- Stat Card 3 -->
+                <div class="stats-card bg-blue-50 p-6 rounded-lg shadow-md text-center hover:shadow-lg">
+                    <div class="text-blue-800 mb-4">
+                        <i class="fas fa-bolt text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">5</h3>
+                    <p class="text-gray-700">IPL Titles as Captain (Most by any captain)</p>
+                    <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202004/rohitsharmaipl2015final.jpeg?size=690:388" alt="IPL trophies" class="mt-4 rounded-lg w-full">
+                </div>
+                
+                <!-- Stat Card 4 -->
+                <div class="stats-card bg-blue-50 p-6 rounded-lg shadow-md text-center hover:shadow-lg">
+                    <div class="text-blue-800 mb-4">
+                        <i class="fas fa-crown text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">30+</h3>
+                    <p class="text-gray-700">International Centuries across Formats</p>
+                    <img src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_1280,q_70/lsci/db/PICTURES/CMS/316800/316900.jpg" alt="Centuries" class="mt-4 rounded-lg w-full">
+                </div>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Batting Stats -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 border-b pb-2">Batting Statistics</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="border-b">
+                                    <th class="text-left py-2 px-1">Format</th>
+                                    <th class="text-right py-2 px-1">Matches</th>
+                                    <th class="text-right py-2 px-1">Runs</th>
+                                    <th class="text-right py-2 px-1">Avg</th>
+                                    <th class="text-right py-2 px-1">HS</th>
+                                    <th class="text-right py-2 px-1">100s</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="py-2 px-1">Test</td>
+                                    <td class="text-right py-2 px-1">52</td>
+                                    <td class="text-right py-2 px-1">3677</td>
+                                    <td class="text-right py-2 px-1">46.54</td>
+                                    <td class="text-right py-2 px-1">212</td>
+                                    <td class="text-right py-2 px-1">10</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="py-2 px-1">ODI</td>
+                                    <td class="text-right py-2 px-1">250</td>
+                                    <td class="text-right py-2 px-1">10185</td>
+                                    <td class="text-right py-2 px-1">48.96</td>
+                                    <td class="text-right py-2 px-1">264</td>
+                                    <td class="text-right py-2 px-1">31</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-1">T20I</td>
+                                    <td class="text-right py-2 px-1">148</td>
+                                    <td class="text-right py-2 px-1">3853</td>
+                                    <td class="text-right py-2 px-1">31.32</td>
+                                    <td class="text-right py-2 px-1">118</td>
+                                    <td class="text-right py-2 px-1">4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <img src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_1280,q_70/lsci/db/PICTURES/CMS/316800/316901.jpg" alt="Batting stats" class="mt-4 rounded-lg w-full">
+                </div>
+                
+                <!-- Captaincy Stats -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 border-b pb-2">Captaincy Record</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-blue-700">Mumbai Indians (IPL)</h4>
+                            <div class="flex justify-between text-sm text-gray-600 mt-1">
+                                <span>Matches: 158</span>
+                                <span>Wins: 91</span>
+                                <span>Win %: 57.59</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 57.59%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-700">India (ODI)</h4>
+                            <div class="flex justify-between text-sm text-gray-600 mt-1">
+                                <span>Matches: 56</span>
+                                <span>Wins: 45</span>
+                                <span>Win %: 80.35</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80.35%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-blue-700">India (T20I)</h4>
+                            <div class="flex justify-between text-sm text-gray-600 mt-1">
+                                <span>Matches: 51</span>
+                                <span>Wins: 39</span>
+                                <span>Win %: 76.47</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 76.47%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_1280,q_70/lsci/db/PICTURES/CMS/316800/316902.jpg" alt="Captaincy stats" class="mt-4 rounded-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-800">Memorable Moments</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover">
+                    <img src="https://i2.wp.com/resize.indiatvnews.com/en/resize/newbucket/1200_-/2020/04/pjimage-2020-04-06t100520-1586147726.jpg?strip=all" alt="Rohit Sharma celebrating century" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white font-semibold text-lg">Celebrating a century</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover">
+                    <img src="https://im.rediff.com/cricket/2020/nov/11rohit-win1.jpg" alt="Rohit Sharma with IPL trophy" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white font-semibold text-lg">With IPL Trophy</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover">
+                    <img src="data:image/jpeg;base64,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" alt="Rohit Sharma playing a shot" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white font-semibold text-lg">Elegant Stroke Play</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIvtqMFRxoAsg_m9cprlw_R5HWKHwgNwX1MA&s" alt="Rohit Sharma with teammates" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white font-semibold text-lg">Team Celebrations</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover">
+                    <img src="https://c.ndtvimg.com/2022-10/kmtsjn0g_rohit-sharma-bcci_625x300_03_October_22.jpg?im=FaceCrop,algorithm=dnn,width=806,height=605" alt="Rohit Sharma captaincy" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white font-semibold text-lg">Leading Team India</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTimpTxwEWUlA8RBgwcgT_ykZrkj1nN6b7Guw&s" alt="Rohit Sharma with family" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white font-semibold text-lg">Family Moments</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-16 bg-blue-800 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <i class="fas fa-quote-left text-4xl text-blue-300 mb-6"></i>
+            <blockquote class="text-2xl md:text-3xl font-light italic mb-6">
+                "I don't believe in perfect practice. I believe in productive practice. Every minute you spend in the nets should be productive."
+            </blockquote>
+            <p class="text-xl font-semibold">- Rohit Sharma</p>
+            <img src="">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">Rohit Sharma</h3>
+                    <p class="text-gray-400">The Hitman of Indian Cricket</p>
+                    <img src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316800/316890.png" alt="Rohit signature" class="mt-2 h-12">
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://twitter.com/ImRo45" target="_blank" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/rohitsharma45/" target="_blank" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://en.wikipedia.org/wiki/Rohit_Sharma" target="_blank" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-wikipedia-w"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>Created with ❤️ by a Rohit Sharma fan | All images belong to their respective owners</p>
+                <p class="mt-2">© 2023 Tribute Page. Not affiliated with Rohit Sharma.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-800 text-white w-12 h-12 rounded-full shadow-lg hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Mobile menu toggle (would need more implementation)
+        const mobileMenuButton = document.querySelector('.md\\:hidden');
+        mobileMenuButton.addEventListener('click', () => {
+            alert('Mobile menu would open here in a complete implementation');
+        });
+    </script>
+</body>
+</html>
