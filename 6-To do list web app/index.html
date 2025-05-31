@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List Web Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .task-item:hover .task-actions {
+            opacity: 1;
+        }
+        
+        .checkbox-container {
+            position: relative;
+            padding-left: 35px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        .checkbox-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 24px;
+            width: 24px;
+            background-color: #fff;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .checkbox-container:hover input ~ .checkmark {
+            border-color: #94a3b8;
+        }
+        
+        .checkbox-container input:checked ~ .checkmark {
+            background-color: #4f46e5;
+            border-color: #4f46e5;
+        }
+        
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        
+        .checkbox-container input:checked ~ .checkmark:after {
+            display: block;
+        }
+        
+        .checkbox-container .checkmark:after {
+            left: 7px;
+            top: 3px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        
+        .task-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .task-list::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .task-list::-webkit-scrollbar-thumb {
+            background: #c7d2fe;
+            border-radius: 10px;
+        }
+        
+        .task-list::-webkit-scrollbar-thumb:hover {
+            background: #a5b4fc;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .task-item {
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .empty-state {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50">
+    <div class="container mx-auto px-4 py-8 max-w-3xl">
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl font-bold text-indigo-900 mb-2">To-DO-List</h1>
+            <p class="text-indigo-600">Organize your day, one task at a time</p>
+            <div class="mt-4 flex justify-center">
+                <div class="w-16 h-1 bg-indigo-300 rounded-full"></div>
+            </div>
+        </header>
+        
+        
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6 flex justify-between items-center">
+            <div class="text-center">
+                <div class="text-2xl font-bold text-indigo-600" id="total-tasks">0</div>
+                <div class="text-sm text-gray-500">Total Tasks</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-bold text-green-500" id="completed-tasks">0</div>
+                <div class="text-sm text-gray-500">Completed</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-bold text-amber-500" id="pending-tasks">0</div>
+                <div class="text-sm text-gray-500">Pending</div>
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <form id="task-form" class="flex gap-3">
+                <div class="flex-grow relative">
+                    <input 
+                        type="text" 
+                        id="task-input" 
+                        placeholder="What needs to be done?" 
+                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-transparent transition-all"
+                        autocomplete="off"
+                    >
+                    <button type="submit" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-indigo-500 hover:text-indigo-700">
+                        <i class="fas fa-plus-circle text-2xl"></i>
+                    </button>
+                </div>
+            </form>
+            
+            <div class="flex justify-center mt-4 space-x-2">
+                <button data-filter="all" class="filter-btn px-3 py-1 rounded-full text-sm bg-indigo-100 text-indigo-700 font-medium">All</button>
+                <button data-filter="active" class="filter-btn px-3 py-1 rounded-full text-sm bg-amber-100 text-amber-700 font-medium">Active</button>
+                <button data-filter="completed" class="filter-btn px-3 py-1 rounded-full text-sm bg-green-100 text-green-700 font-medium">Completed</button>
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <div id="task-list" class="task-list max-h-96 overflow-y-auto">
+                <div id="empty-state" class="empty-state p-8 text-center">
+                    <div class="mx-auto w-24 h-24 mb-4 text-indigo-200">
+                        <i class="fas fa-clipboard-list text-7xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-700 mb-1">No tasks yet</h3>
+                    <p class="text-gray-500">Add your first task to get started!</p>
+                </div>
+                
+               
+            </div>
+            
+            
+            <div class="bg-gray-50 px-6 py-3 text-sm text-gray-500 flex justify-between items-center border-t border-gray-100">
+                <div id="items-left">0 items left</div>
+                <button id="clear-completed" class="text-indigo-500 hover:text-indigo-700">Clear completed</button>
+            </div>
+        </div>
+        
+        <div class="mt-8 text-center text-gray-500 text-sm">
+            <p>"Productivity is never an accident. It is always the result of a commitment to excellence, intelligent planning, and focused effort."</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
